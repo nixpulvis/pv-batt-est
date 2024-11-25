@@ -1,0 +1,15 @@
+#!/usr/bin/env ruby
+
+require 'csv'
+require 'json'
+
+# Read in the CSV data.
+csv = CSV.parse(ARGF.read)
+
+# Skip the HOMER CSV non-standard header row we don't need.
+csv = csv[1..]
+
+# TODO: Filter unused values.
+
+# Output the JSON representation of the data.
+puts JSON.generate(csv)
