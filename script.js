@@ -8,22 +8,22 @@ Promise.all([
 });
 
 // TODO: Parse from metadata csv.
-const INPUT_COLUMNS = [0,1,2]
-
 function populateSelectOptions(metadata, data) {
-    let inputs = {};
-    for (let i = 0; i < INPUT_COLUMNS.length; i++) {
-        let key = data[0][INPUT_COLUMNS[i]];
-        var label = $("<label>").prop("for", data[0][i]).text("  " + data[0][i]);
-        var select = $("<select>").prop("id", data[0][i]);
+    let [inputs, outputs] = parseMetadata(metadata, data);
+
+    let inputs_elements = {};
+    for (let i = 0; i < inputs.length; i++) {
+        let key = inputs[i].key;
+        var label = $("<label>").prop("for", key).text(inputs[i].label);
+        var select = $("<select>").prop("id", key);
 
         for (let j = 0; j < data.length; j++) {
             if (j == 0) {
-                inputs[key] = [];
+                inputs_elements[key] = [];
             } else {
-                var element = data[j][INPUT_COLUMNS[i]];
-                if (inputs[key].indexOf(element) === -1) {
-                    inputs[key].push(element);
+                var element = data[j][inputs[i].dataColumn];
+                if (inputs_elements[key].indexOf(element) === -1) {
+                    inputs_elements[key].push(element);
                     var option = $("<option>").val(element).text(element);
                     select.append(option);
                 }
@@ -34,5 +34,29 @@ function populateSelectOptions(metadata, data) {
             .append(label)
             .append(select)
             .append("<br>");
+    }
+}
+
+function parseMetadata(metadata, data) {
+    let header = data[0];
+    let inputs = [];
+    let outputs = [];
+    for (let i = 0; i < metadata.length; i++) {
+        if (metadata[i][3] == "Input") {
+            inputs.push(parseMetadataRow(metadata[i], header));
+        } else if (metadata[i][3] == "Output") {
+            outputs.push(parseMetadataRow(metadata[i], header));
+        }
+    }
+
+    return [inputs, outputs];
+}
+
+function parseMetadataRow(metadata, header) {
+    return {
+        'label': metadata[0],
+        'key': metadata[1],
+        'dataColumn': header.indexOf(metadata[1]),
+        'unit': metadata[2],
     }
 }
