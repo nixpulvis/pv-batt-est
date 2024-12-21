@@ -34,6 +34,8 @@ function populateSelectOptions(metadata, data) {
             .append(label)
             .append(select)
             .append("<br>");
+
+        sortSelectOptions(key);
     }
 }
 
@@ -59,4 +61,18 @@ function parseMetadataRow(metadata, header) {
         'dataColumn': header.indexOf(metadata[1]),
         'unit': metadata[2],
     }
+}
+
+function sortSelectOptions(selectId) {
+    console.log(selectId);
+    const selectElement = document.getElementById(selectId);
+    const options = Array.from(selectElement.options);
+
+    options.sort((a, b) => {
+        const valueA = parseInt(a.value);
+        const valueB = parseInt(b.value);
+        return valueA - valueB;
+    });
+
+    options.forEach(option => selectElement.appendChild(option));
 }
