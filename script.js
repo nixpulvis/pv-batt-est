@@ -16,6 +16,7 @@ function populateSelectOptions(metadata, data) {
         let key = inputs[i].key;
         var label = $("<label>").prop("for", key).text(inputs[i].label);
         var select = $("<select>").prop("id", key);
+        var unit = $("<label>").prop("for", key).text(inputs[i].unit);
 
         for (let j = 0; j < data.length; j++) {
             if (j == 0) {
@@ -33,6 +34,7 @@ function populateSelectOptions(metadata, data) {
         $("#input")
             .append(label)
             .append(select)
+            .append(unit)
             .append("<br>");
 
         sortSelectOptions(key);
