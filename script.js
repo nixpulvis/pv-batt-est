@@ -1,18 +1,16 @@
-fetch("http://localhost:8000/metadata.json")
-    .then(response => response.json())
-    .then(metadata => {
-        return fetch("http://localhost:8000/data.json");
-    })
-    .then(response => response.json())
-    .then(data => {
-        populateSelectOptions(data);
-    })
-    .catch(error => console.error("Error:", error));
+Promise.all([
+    fetch("http://localhost:8000/metadata.json"),
+    fetch("http://localhost:8000/data.json"),
+]).then(([metadata, data]) => {
+    return Promise.all([metadata.json(), data.json()]);
+}).then(([metadata, data]) => {
+    populateSelectOptions(metadata, data);
+});
 
 // TODO: Parse from metadata csv.
 const INPUT_COLUMNS = [0,1,2]
 
-function populateSelectOptions(data) {
+function populateSelectOptions(metadata, data) {
     let inputs = {};
     for (let i = 0; i < INPUT_COLUMNS.length; i++) {
         let key = data[0][INPUT_COLUMNS[i]];
