@@ -1,10 +1,16 @@
-form#input {
+form#input, div#output {
     display: grid;
     grid-template-columns: 225px 135px 200px 0;
+    margin-bottom: 5px;
 }
 
-form#input select {
+form#input select, div#output input {
     width: 125px;
+}
+
+hr {
+    border-top: none;
+    border-bottom: 1px dashed black;
 }
 
 .assumptions {
