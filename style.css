@@ -5,6 +5,7 @@ form#input, div#output {
 }
 
 form#input select, div#output input {
+    box-sizing: border-box;
     width: 125px;
 }
 
