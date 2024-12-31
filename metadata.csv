@@ -3,5 +3,5 @@ Total Installed Cost of Storage,Sensitivity/LI ASM Replacement Cost Multiplier (
 Total Installed Cost of Solar,Sensitivity/PV Replacement Cost Multiplier (*),$/Watt,Input
 Discount Rate,Sensitivity/NominalDiscountRate (%),%,Input
 Annual Maintenance Cost,Sensitivity/System Fixed O&M Cost ($),$/Year/MW,Input
-Contollable Load,Sensitivity/Capacity Shortage (%),% of total load,Input
+Controllable Load,Sensitivity/Capacity Shortage (%),% of total load,Input
 Levelized Cost of Energy,Cost/LCOE ($/kWh),$/kWh,Output
