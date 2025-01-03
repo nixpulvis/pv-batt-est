@@ -1,3 +1,8 @@
+body {
+    margin: 0 25px;
+    font-size: 18px;
+}
+
 form#input, div#output {
     display: grid;
     grid-template-columns: 225px 85px 200px 0;
