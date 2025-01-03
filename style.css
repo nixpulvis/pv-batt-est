@@ -1,12 +1,12 @@
 form#input, div#output {
     display: grid;
-    grid-template-columns: 225px 135px 200px 0;
+    grid-template-columns: 225px 85px 200px 0;
     margin-bottom: 5px;
 }
 
 form#input select, div#output input {
     box-sizing: border-box;
-    width: 125px;
+    width: 75px;
 }
 
 hr {
