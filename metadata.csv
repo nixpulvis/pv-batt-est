@@ -1,7 +1,7 @@
 Label Name,Data Name,Unit,Use
-Total Installed Cost of Storage,Sensitivity/LI ASM Replacement Cost Multiplier (*),$/kWh,Input
-Total Installed Cost of Solar,Sensitivity/PV Replacement Cost Multiplier (*),$/Watt,Input
+Total Installed Cost of Storage,Sensitivity/LI ASM Replacement Cost Multiplier (*),per kWh,Input
+Total Installed Cost of Solar,Sensitivity/PV Replacement Cost Multiplier (*),per Watt,Input
 Discount Rate,Sensitivity/NominalDiscountRate (%),%,Input
-Annual Maintenance Cost,Sensitivity/System Fixed O&M Cost ($),$/Year/MW,Input
+Annual Maintenance Cost,Sensitivity/System Fixed O&M Cost ($),per Year per MW,Input
 Controllable Load,Sensitivity/Capacity Shortage (%),% of total load,Input
-Levelized Cost of Energy,Cost/LCOE ($/kWh),$/kWh,Output
+Levelized Cost of Energy,Cost/LCOE ($/kWh),per kWh,Output
