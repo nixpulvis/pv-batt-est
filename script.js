@@ -1,6 +1,6 @@
 Promise.all([
-    fetch("https://nixpulvis.com/pv-batt-est/metadata.json"),
-    fetch("https://nixpulvis.com/pv-batt-est/data.json"),
+    fetch("https://cleanpowereverywhere.com/metadata.json"),
+    fetch("https://cleanpowereverywhere.com/data.json"),
 ]).then(([metadata, data]) => {
     return Promise.all([metadata.json(), data.json()]);
 }).then(([metadata, data]) => {
