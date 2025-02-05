@@ -6,7 +6,9 @@ require 'json'
 # Read in the CSV data.
 csv = CSV.parse(ARGF.read)
 
+sanitized = csv.map { |row| row.map { |col| col.strip if col }}
+
 # TODO: Filter unused values.
 
 # Output the JSON representation of the data.
-puts JSON.generate(csv)
+puts JSON.generate(sanitized)
