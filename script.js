@@ -1,11 +1,11 @@
 Promise.all([
     // NOTE: For production.
-    // fetch("https://cleanpowereverywhere.com/metadata.json"),
-    // fetch("https://cleanpowereverywhere.com/data.json"),
+    fetch("https://cleanpowereverywhere.com/metadata.json"),
+    fetch("https://cleanpowereverywhere.com/data.json"),
 
     // NOTE: For local development only.
-    fetch("http://localhost:8000/metadata.json"),
-    fetch("http://localhost:8000/data.json"),
+    // fetch("http://localhost:8000/metadata.json"),
+    // fetch("http://localhost:8000/data.json"),
 ]).then(([metadata, data]) => {
     return Promise.all([metadata.json(), data.json()]);
 }).then(([metadata, data]) => {
