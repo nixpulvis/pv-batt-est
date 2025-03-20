@@ -1,6 +1,6 @@
 Label Name,Data Name,Unit,Use,Default
 Total Installed Cost of Storage,Sensitivity/LI ASM Replacement Cost Multiplier (*),per kWh,Input,$50
-Total Installed Cost of Solar,Sensitivity/PV Replacement Cost Multiplier (*),per kWh,Input,$500
+Total Installed Cost of Solar,Sensitivity/PV Replacement Cost Multiplier (*),per kW,Input,$500
 Discount Rate,Sensitivity/NominalDiscountRate (%),%,Input,3
 Annual Maintenance Cost,Sensitivity/System Fixed O&M Cost ($),per Year per MW,Input,$0
 Controllable Load,Sensitivity/Capacity Shortage (%),% of total load,Input,30
