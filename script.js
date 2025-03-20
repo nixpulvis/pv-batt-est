@@ -1,6 +1,11 @@
 Promise.all([
-    fetch("https://cleanpowereverywhere.com/metadata.json"),
-    fetch("https://cleanpowereverywhere.com/data.json"),
+    // NOTE: For production.
+    // fetch("https://cleanpowereverywhere.com/metadata.json"),
+    // fetch("https://cleanpowereverywhere.com/data.json"),
+
+    // NOTE: For local development only.
+    fetch("http://localhost:8000/metadata.json"),
+    fetch("http://localhost:8000/data.json"),
 ]).then(([metadata, data]) => {
     return Promise.all([metadata.json(), data.json()]);
 }).then(([metadata, data]) => {
@@ -27,6 +32,7 @@ function parseMetadataRow(metadata, header) {
         'id': metadata[1].replace(/\W/g, ''),
         'dataColumn': header.indexOf(metadata[1]),
         'unit': metadata[2],
+        'default': metadata[4],
     }
 }
 
@@ -48,6 +54,9 @@ function populateSelectOptions(metadata, data) {
                 if (inputs_elements[id].indexOf(element) === -1) {
                     inputs_elements[id].push(element);
                     var option = $("<option>").val(element).text(element);
+                    if (inputs[i].default == element) {
+                      option.prop("selected", "selected");
+                    }
                     select.append(option);
                 }
             }
