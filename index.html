@@ -12,11 +12,15 @@
 <body>
   <h1>Cost of 24-hour Baseload Solar + Storage</h1>
   <p>The sun shines everywhere, but not all the time. Combined with batteries,
-  though, the hybrid system becomes fully dispatchable. Using a simple model we
+  though, the hybrid system becomes fully dispatchable. Using a simple HOMER Pro model we
   show how much it would cost to provide a constant 24-hour source of energy
-  using just solar and batteries. Of course, it depends on a few factors,
-  especially the total installed cost of solar and batteries and a couple of
-  other factors listed below.</p>
+  using just solar and batteries.
+      
+  This is a worst case because it is off-grid so there is no backup from other grid resources.
+  It also assume 24 hour constant load, whereas most loads drop off at night.
+      
+  Of course, it depends on a few factors, especially the total installed cost of solar and batteries
+  and a couple of other factors listed below.</p>
 
   <p>Use the dropdown menus below to vary the factors:</p>
 
@@ -32,9 +36,10 @@
     <h4>Assumptions</h4>
 
     <ul>
-      <li>Based on a 1MW off-grid system. Connecting a larger system to an
-        existing grid could significantly lower the cost but complicate the
-        analysis due to a variety of utility regulations.</li>
+      <li>Based on a 1MW off-grid system, but the analysis scales.
+       Larger systems should have lower costs.<li>
+      </li> Connecting to an existing grid could significantly lower the cost
+        but complicate the analysis due to a variety of utility regulations.</li>
       <li>Hourly solar radiation data for Denver Colorado from NREL’s National
         Solar Radiation Database.</li>
       <li>All system development and equipment costs need to be allocated to
